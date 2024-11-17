@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: linyao <linyao@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 22:26:07 by linyao            #+#    #+#             */
-/*   Updated: 2024/11/16 11:46:13 by linyao           ###   ########.fr       */
+/*   Created: 2024/11/16 12:47:18 by linyao            #+#    #+#             */
+/*   Updated: 2024/11/16 13:00:48 by linyao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 #include <iostream>
 
-class Animal {
-    protected:
-        std::string _type;
+class Brain {
+    private:
+        std::string _ideas[100];
     public:
-        Animal(void);
-        Animal(std::string const &type);
-        Animal(Animal const &other);
-        virtual ~Animal(void);
-        Animal &operator=(Animal const &other);
-        std::string const &getType(void) const;
-        virtual void makeSound(void) const;
+        Brain(void);
+        Brain(Brain const &other);
+        ~Brain(void);
+        Brain &operator=(Brain const &other);
+        std::string const &getIdea(int const &index) const;
+        void setIdea(std::string const &idea, int const &index);
 };

@@ -1,28 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   IMateriaSource.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: linyao <linyao@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 22:26:07 by linyao            #+#    #+#             */
-/*   Updated: 2024/11/16 11:46:13 by linyao           ###   ########.fr       */
+/*   Created: 2024/11/16 20:46:06 by linyao            #+#    #+#             */
+/*   Updated: 2024/11/17 00:37:11 by linyao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "IMateriaSource.hpp"
 
-#include <iostream>
-
-class Animal {
-    protected:
-        std::string _type;
-    public:
-        Animal(void);
-        Animal(std::string const &type);
-        Animal(Animal const &other);
-        virtual ~Animal(void);
-        Animal &operator=(Animal const &other);
-        std::string const &getType(void) const;
-        virtual void makeSound(void) const;
-};
+IMateriaSource::~IMateriaSource(void) {
+    std::cout << "IMateriaSource class: this is the destructor of an interface" << std::endl;
+}
