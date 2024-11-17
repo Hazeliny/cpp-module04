@@ -6,12 +6,14 @@
 /*   By: linyao <linyao@student.42barcelona.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 00:27:28 by linyao            #+#    #+#             */
-/*   Updated: 2024/11/16 17:24:09 by linyao           ###   ########.fr       */
+/*   Updated: 2024/11/17 12:52:02 by linyao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DogCat.hpp"
 #include "Wrong.hpp"
+#include <cstdio>
+#include <cstdlib>
 
 int main()
 {
@@ -26,13 +28,14 @@ int main()
                 exit(1);
             }
         }
-        else
+        else {
             animals[i] = new Cat();
             if (!animals[i]) {
                 perror("New a Cat object failed");
                 std::cerr << "Exiting...";
                 exit(1);
             }
+		}
     }
     std::cout << std::endl;
     std::cout << "\033[34mTesting Inheritance of Animal objects...\033[0m" << std::endl;
