@@ -70,12 +70,13 @@ int main()
     std::cout << "\033[34mTesting deep copy of Dog class with reloaded assignment operator...\033[0m" << std::endl;
     Dog *oldDog2 = new Dog;
     oldDog2->getBrain().setIdea("Swim! ", 0);
-    std::cout << "oldDog's Brain idea:\033[31m " << oldDog2->getBrain().getIdea(0) << "\033[0m" << std::endl;
+    std::cout << "oldDog's original Brain idea:\033[31m " << oldDog2->getBrain().getIdea(0) << "\033[0m" << std::endl;
     Dog *newDog2 = new Dog;
-    newDog2->getBrain().setIdea("Play ball. ", 0);
-    std::cout << "newDog's original Brain idea:\033[32m " << newDog2->getBrain().getIdea(0) << "\033[0m" << std::endl;
     *newDog2 = *oldDog2;
-    std::cout << "newDog's current Brain idea:\033[31m " << newDog2->getBrain().getIdea(0) << "\033[0m" << std::endl;
+    std::cout << "after copied from oldDog before set with its own idea, newDog's Brain idea should be same with that of oldDog:\033[31m " << newDog2->getBrain().getIdea(0) << "\033[0m" << std::endl;
+    newDog2->getBrain().setIdea("Play ball. ", 0);
+    std::cout << "after setting newDog's idea, currently newDog's Brain idea:\033[32m " << newDog2->getBrain().getIdea(0) << "\033[0m" << std::endl;
+    std::cout << "after setting newDog's idea, oldDog's Brain idea should be kept unchanged, different with that of newDog:\033[36m " << oldDog2->getBrain().getIdea(0) << "\033[0m" << std::endl;
     delete oldDog2;
     delete newDog2;
 
@@ -94,12 +95,13 @@ int main()
     std::cout << "\033[34mTesting deep copy of Cat class with reloaded assignment operator...\033[0m" << std::endl;
     Cat *oldCat4 = new Cat;
     oldCat4->getBrain().setIdea("Catch birds! ", 0);
-    std::cout << "oldCat's Brain idea:\033[31m " << oldCat4->getBrain().getIdea(0) << "\033[0m" << std::endl;
+    std::cout << "oldCat's original Brain idea:\033[31m " << oldCat4->getBrain().getIdea(0) << "\033[0m" << std::endl;
     Cat *newCat4 = new Cat;
-    newCat4->getBrain().setIdea("Sleep. ", 0);
-    std::cout << "newCat's original Brain idea:\033[32m " << newCat4->getBrain().getIdea(0) << "\033[0m" << std::endl;
     *newCat4 = *oldCat4;
-    std::cout << "newCat's current Brain idea:\033[31m " << newCat4->getBrain().getIdea(0) << "\033[0m" << std::endl;
+    std::cout << "after copied from oldCat before set with its own idea, newCat's Brain idea should be same with that of oldCat:\033[31m " << newCat4->getBrain().getIdea(0) << "\033[0m" << std::endl;
+    newCat4->getBrain().setIdea("Sleep. ", 0);
+    std::cout << "after setting newCat's idea, currently newCat's Brain idea:\033[32m " << newCat4->getBrain().getIdea(0) << "\033[0m" << std::endl;
+    std::cout << "after setting newCat's idea, oldCat's Brain idea should be kept unchanged, different with that of newCat:\033[36m " << oldCat4->getBrain().getIdea(0) << "\033[0m" << std::endl;
     delete oldCat4;
     delete newCat4;
 
